@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</head>
+<body>
+<form>
+    <h1 class="text-center">Edit Facility</h1>
+    <div class="row col-12">
+        <div class="row col-6">
+            <div class="form-group distance">
+                <label for="name">Name</label>
+                <input type="text" class="form-control inputSize" id="name" value="Beach Front Villas">
+            </div>
+            <div class="form-group distance">
+                <label for="area">Area</label>
+                <input type="text" class="form-control inputSize" id="area" value="90">
+            </div>
+            <div class="form-group distance">
+                <label for="cost">Cost</label>
+                <input type="text" class="form-control inputSize" id="cost" value="3000000000">
+            </div>
+            <div class="form-group distance">
+                <label for="max-people">Max people</label>
+                <input type="text" class="form-control inputSize" id="max-people" value="6">
+            </div>
+            <div class="form-group distance">
+                <label for="standard-room">Standard Room</label>
+                <input type="text" class="form-control inputSize" id="standard-room" value="VIP">
+            </div>
+        </div>
+        <div class="row col-6">
+            <div class="form-group distance">
+                <label for="description-other-convenience">Description other convenience</label>
+                <input type="text" class="form-control inputSize" id="description-other-convenience" value="có hồ bơi">
+            </div>
+            <div class="form-group distance">
+                <label for="pool-area">Pool Area</label>
+                <input type="text" class="form-control inputSize" id="pool-area" value="10">
+            </div>
+            <div class="form-group distance">
+                <label for="number-of-floor">Number of floor</label>
+                <input type="text" class="form-control inputSize" id="number-of-floor" value="3">
+            </div>
+            <div class="form-group distance">
+                <label for="facility-free">Facility free</label>
+                <input type="text" class="form-control inputSize" id="facility-free" value="karaoke">
+            </div>
+            <div class="distance">
+                <select class="form-control custom-select">
+                    <option selected>Rent type</option>
+                    <option value="1">villa</option>
+                    <option value="2">house</option>
+                    <option value="3">room</option>
+                </select>
+            </div>
+            <div class="distance">
+                <select class="form-control custom-select">
+                    <option selected>Facility type</option>
+                    <option value="1">year</option>
+                    <option value="2">month</option>
+                    <option value="3">day</option>
+                    <option value="4">hour</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Edit</button>
+        </div>
+    </div>
+</form>
+</body>
+</html>
