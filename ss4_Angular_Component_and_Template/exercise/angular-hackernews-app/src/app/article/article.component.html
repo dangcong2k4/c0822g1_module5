@@ -1,0 +1,52 @@
+<h2>Các "Tin Vịt" của ngày hôm nay</h2>
+
+<hr>
+<div *ngFor="let art of articles">
+  <a href="{{art.url}}" target="_blank">{{art.title}}</a>
+  <button class="btn btn-danger" style="margin-left: 10px" (click)="deleteArticle(art.id)">Xóa</button>
+</div>
+<hr>
+<div>
+  <h2>Thêm một "Tin Vịt" mới</h2>
+  <table>
+    <tr>
+      <td>Tiêu đề:</td>
+      <td><textarea class="form-control" [(ngModel)]="article.title" cols="70"></textarea></td>
+    </tr>
+    <tr>
+      <td>Đường dẫn:</td>
+      <td>
+        <textarea class="form-control" [(ngModel)]="article.url" cols="70"></textarea>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><button style="float: right" class="btn btn-info" (click)="addNewArticle()">Thêm</button></td>
+    </tr>
+  </table>
+
+</div>
+<hr>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
