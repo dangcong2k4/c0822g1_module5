@@ -1,0 +1,66 @@
+
+
+
+  <form [formGroup]="reactiveForm" (ngSubmit)="validateRegister()">
+    <div class="mb-3">
+      <label  class="form-label">Email </label>
+      <input type="email" style="width: 50%" class="form-control" formControlName="email" name="email" placeholder="ex: abc@gmail.com">
+      <p  style="color:red" *ngIf="reactiveForm.controls.email.hasError('required') && reactiveForm.controls.email.touched">không đc để trống</p>
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+
+    <div class="mb-3">
+      <label>Password</label>
+      <input type="password"   style="width: 50%" class="form-control"  formControlName="password" name="password">
+      <p  style="color:red" *ngIf="reactiveForm.controls.password.hasError('required') && reactiveForm.controls.password.touched">không đc để trống</p>
+      <p  style="color:red" *ngIf="reactiveForm.controls.password.hasError('minLength') && reactiveForm.controls.password.touched">mật khẩu phải nhiewuf hơn 6 ký tự</p>
+    </div>
+
+    <div class="mb-3">
+      <label>confirm Password</label>
+      <input type="password"   style="width: 50%" class="form-control"  formControlName="confirmPassword" name="confirmPassword" (change)="onPasswordChange()">
+      <p  style="color:red" *ngIf="reactiveForm.controls.confirmPassword.hasError('required') && reactiveForm.controls.confirmPassword.touched">không đc để trống</p>
+      <p  style="color:red" *ngIf="reactiveForm.controls.confirmPassword.hasError('mismatch') && reactiveForm.controls.confirmPassword.touched">mật khẩu không trùng khớp</p>
+    </div>
+
+
+    <label>Age</label>
+    <input type="number" style="width: 50%" class="form-control" formControlName="age" name="age">
+    <p  style="color:red" *ngIf="reactiveForm.controls.age.hasError('min') && reactiveForm.controls.age.touched">tuổi phải lớn hơn 18 tuổi</p>
+
+    <label  class="form-label">country </label>
+    <select  style="width: 50%" class="form-control" formControlName="country" name="country">
+      <option>Nhật Bổn</option>
+      <option>Đông Lào</option>
+      <option>Tung Quộc</option>
+      <option>Mỹ</option>
+      <option>Rusia</option>
+    </select>
+    <p  style="color:red" *ngIf="reactiveForm.controls.country.hasError('required') && reactiveForm.controls.country.touched">không đc để trống</p>
+
+    <label>gender :</label><br>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+      <label class="form-check-label" for="exampleRadios1">
+        Nam
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" >
+      <label class="form-check-label" for="exampleRadios2">
+        Nữ
+      </label>
+    </div>
+    <br>
+
+    <label>phone:</label>
+    <input style="width: 50%" class="form-control" formControlName="phone" name="phone" placeholder="+84 368842471">
+    <p  style="color:red" *ngIf="reactiveForm.controls.phone.hasError('required') && reactiveForm.controls.phone.touched">không được để trống</p>
+    <p  style="color:red" *ngIf="reactiveForm.controls.phone.hasError('pattern') && reactiveForm.controls.phone.touched">Nhập chưa đúng định dạng</p>
+
+
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+
