@@ -1,0 +1,88 @@
+<h1 class="text-center">Danh sách khách hàng</h1>
+<table class="table table-striped ">
+  <thead>
+  <tr>
+    <th scope="col">STT</th>
+    <th scope="col">Họ tên</th>
+    <th scope="col">Ngày sinh</th>
+    <th scope="col">Giới tính</th>
+    <th scope="col">Thẻ căn cước</th>
+    <th scope="col">Số điện thoại</th>
+    <th scope="col">email</th>
+    <th scope="col">Địa chỉ</th>
+    <th scope="col">Loại khách hàng</th>
+    <th scope="col">Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th scope="row">1</th>
+    <td>Nguyễn Thị Hào</td>
+    <td>1970-11-07</td>
+    <td>0</td>
+    <td>643431213</td>
+    <td>0945423362</td>
+    <td>thihao07@gmail.com</td>
+    <td>23 Nguyễn Hoàng, Đà Nẵng</td>
+    <td>Bạch kim</td>
+    <td>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        delete
+      </button>
+    </td>
+  </tr>
+  <tr>
+    <th scope="row">2</th>
+    <td>Phạm Xuân Diệu</td>
+    <td>1992-08-08</td>
+    <td>1</td>
+    <td>865342123</td>
+    <td>0954333333</td>
+    <td>xuandieu92@gmail.com</td>
+    <td>K77/22 Thái Phiên, Quảng Trị</td>
+    <td>Vàng</td>
+    <td>
+
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        delete
+      </button>
+    </td>
+  </tr>
+  <tr>
+    <th scope="row">3</th>
+    <td>Trương Đình Nghệ</td>
+    <td>1990-02-27</td>
+    <td>1</td>
+    <td>488645199</td>
+    <td>0373213122</td>
+    <td>nghenhan2702@gmail.com</td>
+    <td>K323/12 Ông Ích Khiêm, Vinh</td>
+    <td>Kim cương</td>
+    <td>
+
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        delete
+      </button>
+    </td>
+  </tr>
+
+  </tbody>
+</table>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-dark">
+        <h4> bạn có muốn xóa khách hàng này!!</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">không</button>
+        <button type="button" class="btn btn-primary">có</button>
+      </div>
+    </div>
+  </div>
+</div>
