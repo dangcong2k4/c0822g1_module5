@@ -10,6 +10,8 @@ import { CreateFacilityComponent } from './component/facility/create-facility/cr
 import {ListFacilityComponent} from "./component/facility/list-facility/list-facility.component";
 import { EditFacilityComponent } from './component/facility/edit-facility/edit-facility.component';
 import { ListCustomerComponent } from './component/customer/list-customer/list-customer.component';
+import { EditCustomerComponent } from './component/customer/edit-customer/edit-customer.component';
+import { CreateCuatomerComponent } from './component/customer/create-cuatomer/create-cuatomer.component';
 
 
 
@@ -22,7 +24,9 @@ import { ListCustomerComponent } from './component/customer/list-customer/list-c
     CreateFacilityComponent,
     ListFacilityComponent,
     EditFacilityComponent,
-    ListCustomerComponent
+    ListCustomerComponent,
+    EditCustomerComponent,
+    CreateCuatomerComponent
   ],
   imports: [
     BrowserModule,
