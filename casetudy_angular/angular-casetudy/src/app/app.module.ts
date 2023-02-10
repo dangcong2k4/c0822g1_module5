@@ -12,6 +12,8 @@ import { EditFacilityComponent } from './component/facility/edit-facility/edit-f
 import { ListCustomerComponent } from './component/customer/list-customer/list-customer.component';
 import { EditCustomerComponent } from './component/customer/edit-customer/edit-customer.component';
 import { CreateCuatomerComponent } from './component/customer/create-cuatomer/create-cuatomer.component';
+import { ContractListComponent } from './component/contract/contract-list/contract-list.component';
+import { ContractCreateComponent } from './component/contract/contract-create/contract-create.component';
 
 
 
@@ -26,7 +28,9 @@ import { CreateCuatomerComponent } from './component/customer/create-cuatomer/cr
     EditFacilityComponent,
     ListCustomerComponent,
     EditCustomerComponent,
-    CreateCuatomerComponent
+    CreateCuatomerComponent,
+    ContractListComponent,
+    ContractCreateComponent
   ],
   imports: [
     BrowserModule,
