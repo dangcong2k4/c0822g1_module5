@@ -1,0 +1,48 @@
+<h1>Danh sách sản phẩm</h1>
+<a routerLink="/create">Tạo mới sản phẩm</a>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">STT</th>
+    <th scope="col">Tên</th>
+    <th scope="col">Giá</th>
+    <th scope="col">Mô tả</th>
+    <th scope="col">Loại</th>
+    <th scope="col">xóa</th>
+    <th scope="col">sửa</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let product of products; index as i">
+    <td>{{i + 1}}</td>
+    <td>{{product.name}}</td>
+    <td>{{product.price}}</td>
+    <td>{{product.description}}</td>
+    <td>{{product.category.name}}</td>
+    <td>
+      <button class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="item= product">Xóa</button>
+      <!--  modal-->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              bạn có muốn xóa sản phẩm này
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">no</button>
+              <button type="button"  class="btn btn-primary" (click)="delete(product.id)"  data-bs-dismiss="modal">yes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </td>
+    <td><a class="btn btn-info" [routerLink]="['/edit',product.id]">sửa</a></td>
+  </tr>
+
+  </tbody>
+</table>
+

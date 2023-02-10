@@ -1,0 +1,72 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "name": "IPhone 12",
+      "price": 2400000,
+      "description": "New",
+      "category": {
+        "id": 1,
+        "name": "màu đen"
+      }
+    },
+    {
+      "id": 2,
+      "name": "IPhone 11",
+      "price": 1560000,
+      "description": "Like new",
+      "category": {
+        "id": 3,
+        "name": "màu hồng ghét sự giả dối"
+      }
+    },
+    {
+      "id": 3,
+      "name": "IPhone X",
+      "price": 968000,
+      "description": "97%",
+      "category": {
+        "id": 4,
+        "name": "hàng limit tựt"
+      }
+    },
+    {
+      "id": 4,
+      "name": "IPhone 8",
+      "price": 7540000,
+      "description": "98%",
+      "category": {
+        "id": 3,
+        "name": "màu hồng ghét sự giả dối"
+      }
+    },
+    {
+      "id": 7,
+      "name": "bánh",
+      "price": 2000,
+      "description": "face",
+      "category": {
+        "id": 2,
+        "name": "màu đỏ"
+      }
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "name": "màu đen"
+    },
+    {
+      "id": 2,
+      "name": "màu đỏ"
+    },
+    {
+      "id": 3,
+      "name": "màu hồng ghét sự giả dối"
+    },
+    {
+      "id": 4,
+      "name": "hàng limit tựt"
+    }
+  ]
+}
