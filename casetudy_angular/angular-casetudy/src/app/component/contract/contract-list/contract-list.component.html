@@ -1,278 +1,269 @@
-<div>
-  <div class="row bg-secondary">
+<h2 class="d-flex justify-content-center text-danger">Contract List</h2>
 
-  </div>
-  <div class="container-fluid" style="background-color: #218838">
-    <div class="row" style="height: 120px">
-      <div class="col-lg-2">
-        <img class="headLeft" src="https://furamavietnam.com/wp-content/uploads/2018/10/logo.png">
+<button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal"
+        data-bs-target="#addModal">
+  Thêm mới hợp đồng
+</button>
+<!-------------------------------------------- Thêm mới ----------------->
+<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addLabel">Thêm hợp đồng</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="col-lg-8">
-        <p class="test headRight">Furama Resort</p>
-      </div>
-      <div class="col-lg-2">
-        <img class="headLeft" src="https://furamavietnam.com/wp-content/uploads/2018/10/logo.png">
-      </div>
+      <form  method="post" >
+        <div class="modal-body">
+
+          <div class="mb-3 row">
+            <label  class="col-sm-3 col-form-label ">Ngày bắt đầu</label>
+            <div class="col-sm-9">
+              <input type="date" class="form-control" >
+
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label  class="col-sm-3 col-form-label">Ngày kết thúc</label>
+            <div class="col-sm-9">
+              <input type="date" class="form-control">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label">Tiền đặt cọc</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" >
+
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label">Khách hàng thuê dịch vụ</label>
+            <div class="col-sm-9">
+              <select class="form-control" th:field="*{customer}">
+                <option value="">Chọn Khách hàng</option>
+                <option th:each="item: ${customerList}" th:value="${item.id}"
+                        th:text="${item.name}"></option>
+              </select>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label">Nhân viên</label>
+            <div class="col-sm-9">
+              <select class="form-control" >
+                <option value="">Chọn Nhân Viên</option>
+
+              </select>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label">Dịch vụ</label>
+            <div class="col-sm-9">
+              <select class="form-control" >
+                <option value="">Chọn dịch vụ</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Save changes</button>
+        </div>
+      </form>
     </div>
   </div>
-
-  <nav class="navbar navbar-expand-lg navbar-light bg-light container-fluid">
-    <div class="container-fluid" style="background-color: #046056   ">
-      <a class="navbar-brand" href="#">Home</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="http://localhost:63342/Module_3/castudy_2/castudy_html/employee/list_delete_employee.html?_ijt=r9l6u9e5ms4eh9j2rococm9v8a">Employee</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="http://localhost:63342/Module_3/castudy_2/castudy_html/customer/list_delete_customer.html?_ijt=u0klco0i4b6ld148jhbblcp1mk">Customer</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="http://localhost:63342/Module_3/castudy_2/castudy_html/facility/list_delete_facility.html?_ijt=u0klco0i4b6ld148jhbblcp1mk">Service</a>
-
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="/contract">Contract</a>
-          </li>
-        </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit" style="background-color: #b8daff">Search</button>
-        </form>
-      </div>
-    </div>
-  </nav>
 </div>
-<h1 class="text-center">Hợp đồng</h1>
-<table class="table table-striped">
+
+
+<table class="table table-striped table-hover" style="--bs-table-hover-bg: lightpink">
   <thead>
   <tr>
-    <th scope="col">STT</th>
-    <th scope="col">Dịch vụ</th>
-    <th scope="col">Khách hàng</th>
-    <th scope="col">Ngày bắt đầu</th>
-    <th scope="col">Ngày kết thúc</th>
-    <th scope="col">tiền đặt cọc</th>
-    <th scope="col">tổng tiền</th>
-    <th scope="col">các dịch vụ đi kèm</th>
-
+    <th scope="col">#</th>
+    <th scope="col">Facility Name</th>
+    <th scope="col">Customer Name</th>
+    <th scope="col">Start Date</th>
+    <th scope="col">End Date</th>
+    <th scope="col">Deposit</th>
+    <th scope="col">Total Payment</th>
+    <th scope="col">Attach Facility</th>
   </tr>
   </thead>
-  <tbody>
+  <tbody id="my-body-contract">
   <tr>
-    <th scope="row">1</th>
-    <td>Room</td>
-    <td>nguyễn văn A</td>
-    <td>2020-12-08</td>
-    <td>2021-01-18</td>
-    <td>200000</td>
-    <td>đ2,000,000</td>
+    <td>1</td>
+    <td >Villa</td>
+    <td >Trần Văn Sỹ</td>
+    <td >20-05-1997</td>
+    <td >30-05-1997</td>
+    <td >0</td>
+    <td >100000000</td>
     <td>
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+      <button type="button"
+              class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#updateModal">
         +
       </button>
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Danh sách các dịch vụ đi kèm
-      </button></td>
-  </tr>
-  <tr>
-    <th scope="row">2</th>
-    <td>Vila</td>
-    <td>nguyễn văn B</td>
-    <td>2020-12-08</td>
-    <td>2021-01-18</td>
-    <td>200000</td>
-    <td>đ2,000,000</td>
-    <td>
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-        +
-      </button>
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Danh sách các dịch vụ đi kèm
-      </button></td>
-  </tr>
-  <tr>
-    <th scope="row">3</th>
-    <td>House</td>
-    <td>nguyễn văn C</td>
-    <td>2020-12-08</td>
-    <td>2021-01-18</td>
-    <td>200000</td>
-    <td>đ2,000,000</td>
-    <td>
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-        +
-      </button>
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Danh sách các dịch vụ đi kèm
-      </button></td>
-  </tr>
 
+      <button type="button"
+              class="btn btn-sm btn-primary" data-bs-toggle="modal"
+              data-bs-target="#attach_facility">
+        Danh sách dịch vụ đi kèm
+      </button>
+  </tr>
   </tbody>
 </table>
 
-
-<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!------------------------------------------- Modal update ------------------------------------------>
+<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel1">Thêm mới hợp đồng chi tiết</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Thay Đổi Hợp đồng </h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-        <form>
-          <div class="mb-3">
-            <label class="form-label">Ngày bắt đầu :</label>
-            <input style="width: 1000px" type="datetime-local" name="bdaytime">
+      <form action="/contract/update" method="post" th:object="${contractDto}">
+        <div class="modal-body">
+          <input type="text" hidden id="idContractEdit" th:field="*{id}">
+          <div class="mb-3 row">
+            <label th:for="startDate" class="col-sm-3 col-form-label ">Ngày bắt đầu</label>
+            <div class="col-sm-9">
+              <input type="date" class="form-control" id="startDateEdit" th:field="*{startDate}">
+              <p th:errors="*{startDate}" th:if="${#fields.hasErrors('startDate')}" class="text-danger"></p>
+            </div>
           </div>
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">ngày kết thúc :</label>
-            <input style="width: 1000px" type="datetime-local" name="bdaytime">
+          <div class="mb-3 row">
+            <label th:for="endDate" class="col-sm-3 col-form-label">Ngày kết thúc</label>
+            <div class="col-sm-9">
+              <input type="date" class="form-control" id="endDateEdit" th:field="*{endDate}">
+              <p th:errors="*{endDate}" th:if="${#fields.hasErrors('endDate')}" class="text-danger"></p>
+            </div>
           </div>
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">tiền gửi</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
+          <div class="mb-3 row">
+            <label th:for="deposit" class="col-sm-3 col-form-label">Tiền đặt cọc</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="depositEdit" th:field="*{deposit}">
+              <p th:errors="*{deposit}" th:if="${#fields.hasErrors('deposit')}" class="text-danger"></p>
+            </div>
           </div>
-          <div class="mb-3">
-            <label for="exampleInputPassword" class="form-label">tổng tiền</label>
-            <input style="background-color: grey" type="password" class="form-control" id="exampleInputPassword">
+          <div class="mb-3 row">
+            <label for="total" class="col-sm-3 col-form-label">Tổng tiền</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="total" readonly>
+            </div>
           </div>
+          <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label">Khách hàng thuê dịch vụ</label>
+            <div class="col-sm-9">
+              <select class="form-control" th:field="*{customer}" id="customerEdit">
+                <option value="">Chọn Khách hàng</option>
+                <option th:each="item: ${customerList}" th:value="${item.id}"
+                        th:text="${item.name}"></option>
+              </select>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label">Nhân viên</label>
+            <div class="col-sm-9">
+              <select class="form-control" th:field="*{employee}" id="employeeEdit" >
+                <option value="">Chọn Nhân Viên</option>
+                <option th:each="item: ${employeeList}" th:value="${item.id}"
+                        th:text="${item.name}"></option>
+              </select>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label">Dịch vụ</label>
+            <div class="col-sm-9">
+              <select class="form-control" th:field="*{facility}" id="facilityEdit">
+                <option value="">Chọn dịch vụ</option>
+                <option th:each="item: ${facilityList}" th:value="${item.id}"
+                        th:text="${item.name}"></option>
+              </select>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <span class="col-sm-3 col-form-label">Dịch vụ đi kèm</span>
+            <div class="col-sm-9">
+              <button type="button" class="btn btn-sm btn-primary" onclick="getContractId()" data-bs-toggle="modal"
+                      data-bs-target="#dvdk">
+                +
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy bỏ</button>
+          <button type="submit" class="btn btn-warning">Thay đổi hợp đồng</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 
-          <div class="mb-3">
-            <label class="form-label">khách hàng thuê dịch vụ</label>
-            <select class="form-control">
-              <option>Chọn khách hàng</option>
-              <option>nguyễn A</option>
-              <option>nguyễn B</option>
-              <option>nguyễn C</option>
-            </select>
-          </div>
-          <div class="mb-3">
-            <label class="form-label">dịch vụ</label>
-            <select class="form-control">
-              <option>Chọn dịch vụ</option>
-              <option>villa</option>
-              <option>house</option>
-              <option>room</option>
-            </select>
-          </div>
-          <div class="mb-3">
-            <label class="form-label">dịch vụ đính kèm</label>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal7">
-              +
-            </button>
-          </div>
-
-        </form>
+<div class="modal fade" id="dvdk" tabindex="-1" aria-labelledby="modal1" aria-hidden="true">
+  <div class="modal-dialog ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal1">Thêm dịch vụ đi kèm</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy bỏ</button>
-        <button type="button" class="btn btn-primary">Lưu</button>
+
+      <div class="modal-body">
+        <form th:object="${contractDetail}">
+          <input type="hidden" id="contractIdPro" th:field="*{contract}" >
+          <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label ">Dịch vụ đi kèm</label>
+
+            <div class="col-sm-9">
+              <select class="form-control" id="attachFacilityPro" th:field="*{attachFacility}">
+                <option value="">Chọn dịch vụ đi kèm</option>
+                <option th:each="attachFacility: ${attachFacilityList}" th:value="${attachFacility.id}" th:text="${attachFacility.name}">Kara</option>
+
+              </select>
+            </div>
+          </div>
+        </form>
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label ">Số lượng</label>
+          <div class="col-sm-9">
+            <input class="form-control" type="text" id="quantityPro" >
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Hủy bỏ
+        </button>
+        <button type="button" class="btn btn-warning" onclick="addNewContractDetail()" >Tạo hợp đồng</button>
       </div>
     </div>
   </div>
 </div>
 
-
-
-
-
-
-<div class="modal fade" id="exampleModal7" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="attach_facility" tabindex="-1" aria-labelledby="attach_facilityLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel3">Thêm mới dịch vụ đi kèm</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="mb-3">
-            <label for="exampleInputPassword5" class="form-label">Tên dịch vụ đi kèm</label>
-            <input class="form-control" id="exampleInputPassword5">
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputPassword6" class="form-label">giá tiền</label>
-            <input class="form-control" id="exampleInputPassword6">
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputPassword2" class="form-label">đơn vị </label>
-            <input class="form-control" id="exampleInputPassword2">
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputPassword3" class="form-label">trạng thái</label>
-            <input class="form-control" id="exampleInputPassword3">
-          </div>
-
-
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy bỏ</button>
-        <button type="button" class="btn btn-primary">Lưu</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Danh sách</h5>
+        <h5 class="modal-title" id="attach_facilityLabel">Danh sách dịch vụ đi kèm</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <table class="table">
           <thead>
           <tr>
-            <th scope="col">STT</th>
-            <th scope="col">tên dịch vụ đi kèm</th>
-            <th scope="col">giá tiền</th>
-            <th scope="col">đơn vị</th>
-            <th scope="col">trạng thái</th>
+            <th>STT</th>
+            <th>Attach Facility Name</th>
+            <th>Cost</th>
+            <th>Unit</th>
+            <th>Status</th>
+            <th>Quantity</th>
+            <th>Total</th>
           </tr>
           </thead>
-          <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>karaoke</td>
-            <td>10000</td>
-            <td>giờ</td>
-            <td>tiện nghi, hiện đại</td>
-
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Thuê xe máy</td>
-            <td>10000</td>
-            <td>chiếc</td>
-            <td>hỏng 1 xe</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Thuê xe đạp</td>
-            <td>20000</td>
-            <td>chiếc</td>
-            <td>tốt</td>
-          </tr>
-          <tr>
-            <th scope="row">4</th>
-            <td>Buffet buổi sáng</td>
-            <td>15000</td>
-            <td>suất</td>
-            <td>đầy đủ đồ ăn,tráng miệng</td>
-          </tr>
-
+          <tbody id="my-body">
           </tbody>
         </table>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <!--                <button type="button" class="btn btn-primary">Save changes</button>-->
       </div>
     </div>
   </div>
