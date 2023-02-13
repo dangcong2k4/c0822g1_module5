@@ -1,5 +1,7 @@
 <h1>Danh sách sản phẩm</h1>
 <a routerLink="/create">Tạo mới sản phẩm</a>
+Search name: <input type="text" #nameSearch>
+<button (click)="searchName(nameSearch.value)">Tìm kiếm</button>
 <table class="table">
   <thead>
   <tr>

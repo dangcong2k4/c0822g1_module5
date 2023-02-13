@@ -1,28 +1,38 @@
-<a routerLink="">Danh sách sản phẩm</a>
+<a class="btn btn-primary" routerLink="">Danh sách sản phẩm</a>
 <h1>Tạo sản phẩm mới</h1>
 <form [formGroup]="productForm" (ngSubmit)="submit()">
   <table>
 
     <tr>
       <td>Tên sản phẩm:</td>
-      <td><input type="text" formControlName="name"></td>
+      <td><input class="form-control"  type="text" formControlName="name">
+      <p style="color: red" *ngIf="productForm.controls.name.hasError('required') && productForm.controls.name.touched">không đc để trống</p>
+      <p style="color: red" *ngIf="productForm.controls.name.hasError('minlength') && productForm.controls.name.touched">Tên sản phẩm phải nhiều hơn 10 ký tự</p>
+      </td>
+
     </tr>
     <tr>
       <td>Giá sản phẩm</td>
-      <td><input type="number" formControlName="price"></td>
+      <td><input type="number"  class="form-control" formControlName="price">
+      <p style="color: red" *ngIf="productForm.controls.price.hasError('required') && productForm.controls.price.touched">không đc để trống</p>
+      <p style="color: red" *ngIf="productForm.controls.price.hasError('min') && productForm.controls.price.touched">giá sản phẩm không được là số âm</p>
+      </td>
     </tr>
     <tr>
       <td>Mô tả về sản phẩm</td>
-      <td><input type="text" formControlName="description"></td>
+      <td><input type="text"  class="form-control" formControlName="description">
+        <p style="color: red" *ngIf="productForm.controls.description.hasError('required') && productForm.controls.description.touched">không đc để trống</p>
+        <p style="color: red" *ngIf="productForm.controls.description.hasError('minlength') && productForm.controls.description.touched">Tên sản phẩm phải nhiều hơn 10 ký tự</p>
+      </td>
     </tr>
     <tr>
       <td>loại</td>
       <td>
-        <select formControlName="category">
+        <select formControlName="category"  class="form-control">
         <option *ngFor="let category of category" [ngValue]="category">{{category.name}}</option>
       </select>
       </td>
-      <td><button>Tạo mới</button></td>
     </tr>
   </table>
+  <button class="btn bg-primary" style="margin-left: 100px; color: white">Tạo mới</button>
 </form>

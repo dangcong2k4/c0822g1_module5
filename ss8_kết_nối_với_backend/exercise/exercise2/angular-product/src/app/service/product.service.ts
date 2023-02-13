@@ -27,7 +27,10 @@ export class ProductService {
   }
 
   findById(id: number) {
-    return this.httpClient.get("http://localhost:3000/product/"+ id)
+    return this.httpClient.get("http://localhost:3000/product/"+ id);
   }
 
+  searchName(value: string):Observable<Product[]> {
+    return this.httpClient.get<Product[]>("http://localhost:3000/product/?name_like="+ value);
+  }
 }
