@@ -1,0 +1,140 @@
+{
+  "facility": [
+    {
+      "id": 1,
+      "name":"Villa Beach Front",
+      "area": 25000,
+      "cost": 1000000,
+      "maxPeople": 10,
+      "standardRoom": "vip",
+      "descriptionOther": "có hồ bơi",
+      "poolArea": 500,
+      "numberOfFloors": 4,
+      "facilityFree":"",
+      "rentType": {
+        "id": 1,
+        "name": "year"
+      },
+      "facilityType": {
+        "id": 3,
+        "name": "Villa"
+      }
+    },
+    {
+      "id": 2,
+      "name":"Villa Beach Front",
+      "area": 25000,
+      "cost": 1000000,
+      "maxPeople": 10,
+      "standardRoom": "vip",
+      "descriptionOther": "có hồ bơi",
+      "poolArea": 500,
+      "numberOfFloors": 4,
+      "facilityFree":"",
+      "rentType": {
+        "id": 1,
+        "name": "year"
+      },
+      "facilityType": {
+        "id": 3,
+        "name": "Villa"
+      }
+    },
+    {
+      "id": 3,
+      "name":"Villa Beach Front",
+      "area": 25000,
+      "cost": 1000000,
+      "maxPeople": 10,
+      "standardRoom": "vip",
+      "descriptionOther": "có hồ bơi",
+      "poolArea": 500,
+      "numberOfFloors": 4,
+      "facilityFree":"",
+      "rentType": {
+        "id": 1,
+        "name": "year"
+      },
+      "facilityType": {
+        "id": 3,
+        "name": "Villa"
+      }
+    }
+
+  ],
+
+  "renType": [
+    {
+      "id": 1,
+      "name": "year"
+    },
+    {
+      "id": 2,
+      "name": "month"
+    },
+    {
+      "id": 3,
+      "name": "day"
+    },
+    {
+      "id": 4,
+      "name": "hour"
+    }
+  ],
+
+  "facilityType": [
+    {
+      "id": 1,
+      "name": "Villa"
+    },
+    {
+      "id": 2,
+      "name": "House"
+    },
+    {
+      "id": 3,
+      "name": "Room"
+    }
+  ],
+
+
+  "customer": [
+    {
+      "id": 1,
+      "name":"Nguyễn Tâm Đắc",
+      "dateOfBirth": "1989-07-01",
+      "gender": 0,
+      "idCard": "344343432",
+      "phoneNumber": "0987654321",
+      "email": "actam@gmail.com",
+      "address": "22 Ngô Quyền, Đà Nẵng",
+      "customerType": {
+        "id": 2,
+        "name": "Platinium"
+      }
+    }
+  ],
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Platinium"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Silver"
+    },
+    {
+      "id": 5,
+      "name": "Member"
+    }
+
+  ]
+}

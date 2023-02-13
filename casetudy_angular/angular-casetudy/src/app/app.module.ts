@@ -14,6 +14,8 @@ import { EditCustomerComponent } from './component/customer/edit-customer/edit-c
 import { CreateCuatomerComponent } from './component/customer/create-cuatomer/create-cuatomer.component';
 import { ContractListComponent } from './component/contract/contract-list/contract-list.component';
 import { ContractCreateComponent } from './component/contract/contract-create/contract-create.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 
 
@@ -34,7 +36,10 @@ import { ContractCreateComponent } from './component/contract/contract-create/co
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
