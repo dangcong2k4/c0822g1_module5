@@ -38,10 +38,9 @@
           <div class="mb-3 row">
             <label class="col-sm-3 col-form-label">Khách hàng thuê dịch vụ</label>
             <div class="col-sm-9">
-              <select class="form-control" th:field="*{customer}">
+              <select class="form-control">
                 <option value="">Chọn Khách hàng</option>
-                <option th:each="item: ${customerList}" th:value="${item.id}"
-                        th:text="${item.name}"></option>
+                <option></option>
               </select>
             </div>
           </div>
@@ -118,28 +117,28 @@
         <h5 class="modal-title" id="exampleModalLabel">Thay Đổi Hợp đồng </h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <form action="/contract/update" method="post" th:object="${contractDto}">
+      <form action="/contract/update" method="post">
         <div class="modal-body">
-          <input type="text" hidden id="idContractEdit" th:field="*{id}">
+          <input type="text" hidden id="idContractEdit">
           <div class="mb-3 row">
-            <label th:for="startDate" class="col-sm-3 col-form-label ">Ngày bắt đầu</label>
+            <label class="col-sm-3 col-form-label ">Ngày bắt đầu</label>
             <div class="col-sm-9">
-              <input type="date" class="form-control" id="startDateEdit" th:field="*{startDate}">
-              <p th:errors="*{startDate}" th:if="${#fields.hasErrors('startDate')}" class="text-danger"></p>
+              <input type="date" class="form-control" id="startDateEdit" >
+              <p class="text-danger"></p>
             </div>
           </div>
           <div class="mb-3 row">
-            <label th:for="endDate" class="col-sm-3 col-form-label">Ngày kết thúc</label>
+            <label class="col-sm-3 col-form-label">Ngày kết thúc</label>
             <div class="col-sm-9">
-              <input type="date" class="form-control" id="endDateEdit" th:field="*{endDate}">
-              <p th:errors="*{endDate}" th:if="${#fields.hasErrors('endDate')}" class="text-danger"></p>
+              <input type="date" class="form-control" id="endDateEdit">
+              <p class="text-danger"></p>
             </div>
           </div>
           <div class="mb-3 row">
-            <label th:for="deposit" class="col-sm-3 col-form-label">Tiền đặt cọc</label>
+            <label class="col-sm-3 col-form-label">Tiền đặt cọc</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" id="depositEdit" th:field="*{deposit}">
-              <p th:errors="*{deposit}" th:if="${#fields.hasErrors('deposit')}" class="text-danger"></p>
+              <input type="text" class="form-control" id="depositEdit">
+              <p class="text-danger"></p>
             </div>
           </div>
           <div class="mb-3 row">
@@ -151,30 +150,27 @@
           <div class="mb-3 row">
             <label class="col-sm-3 col-form-label">Khách hàng thuê dịch vụ</label>
             <div class="col-sm-9">
-              <select class="form-control" th:field="*{customer}" id="customerEdit">
+              <select class="form-control" id="customerEdit">
                 <option value="">Chọn Khách hàng</option>
-                <option th:each="item: ${customerList}" th:value="${item.id}"
-                        th:text="${item.name}"></option>
+                <option ></option>
               </select>
             </div>
           </div>
           <div class="mb-3 row">
             <label class="col-sm-3 col-form-label">Nhân viên</label>
             <div class="col-sm-9">
-              <select class="form-control" th:field="*{employee}" id="employeeEdit" >
+              <select class="form-control" id="employeeEdit" >
                 <option value="">Chọn Nhân Viên</option>
-                <option th:each="item: ${employeeList}" th:value="${item.id}"
-                        th:text="${item.name}"></option>
+                <option></option>
               </select>
             </div>
           </div>
           <div class="mb-3 row">
             <label class="col-sm-3 col-form-label">Dịch vụ</label>
             <div class="col-sm-9">
-              <select class="form-control" th:field="*{facility}" id="facilityEdit">
+              <select class="form-control" id="facilityEdit">
                 <option value="">Chọn dịch vụ</option>
-                <option th:each="item: ${facilityList}" th:value="${item.id}"
-                        th:text="${item.name}"></option>
+                <option></option>
               </select>
             </div>
           </div>
@@ -206,15 +202,15 @@
       </div>
 
       <div class="modal-body">
-        <form th:object="${contractDetail}">
-          <input type="hidden" id="contractIdPro" th:field="*{contract}" >
+        <form>
+          <input type="hidden" id="contractIdPro" >
           <div class="mb-3 row">
             <label class="col-sm-3 col-form-label ">Dịch vụ đi kèm</label>
 
             <div class="col-sm-9">
-              <select class="form-control" id="attachFacilityPro" th:field="*{attachFacility}">
+              <select class="form-control" id="attachFacilityPro">
                 <option value="">Chọn dịch vụ đi kèm</option>
-                <option th:each="attachFacility: ${attachFacilityList}" th:value="${attachFacility.id}" th:text="${attachFacility.name}">Kara</option>
+                <option>Kara</option>
 
               </select>
             </div>

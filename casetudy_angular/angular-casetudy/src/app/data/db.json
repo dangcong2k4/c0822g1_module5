@@ -2,7 +2,7 @@
   "facility": [
     {
       "id": 1,
-      "name":"Villa Beach Front",
+      "name": "Villa Beach Front",
       "area": 25000,
       "cost": 1000000,
       "maxPeople": 10,
@@ -10,7 +10,7 @@
       "descriptionOther": "có hồ bơi",
       "poolArea": 500,
       "numberOfFloors": 4,
-      "facilityFree":"",
+      "facilityFree": "",
       "rentType": {
         "id": 1,
         "name": "year"
@@ -22,7 +22,7 @@
     },
     {
       "id": 2,
-      "name":"Villa Beach Front",
+      "name": "Villa Beach Front",
       "area": 25000,
       "cost": 1000000,
       "maxPeople": 10,
@@ -30,7 +30,7 @@
       "descriptionOther": "có hồ bơi",
       "poolArea": 500,
       "numberOfFloors": 4,
-      "facilityFree":"",
+      "facilityFree": "",
       "rentType": {
         "id": 1,
         "name": "year"
@@ -42,7 +42,7 @@
     },
     {
       "id": 3,
-      "name":"Villa Beach Front",
+      "name": "Villa Beach Front",
       "area": 25000,
       "cost": 1000000,
       "maxPeople": 10,
@@ -50,7 +50,7 @@
       "descriptionOther": "có hồ bơi",
       "poolArea": 500,
       "numberOfFloors": 4,
-      "facilityFree":"",
+      "facilityFree": "",
       "rentType": {
         "id": 1,
         "name": "year"
@@ -60,9 +60,7 @@
         "name": "Villa"
       }
     }
-
   ],
-
   "renType": [
     {
       "id": 1,
@@ -81,7 +79,6 @@
       "name": "hour"
     }
   ],
-
   "facilityType": [
     {
       "id": 1,
@@ -96,12 +93,10 @@
       "name": "Room"
     }
   ],
-
-
   "customer": [
     {
       "id": 1,
-      "name":"Nguyễn Tâm Đắc",
+      "name": "Nguyễn Tâm Đắc",
       "dateOfBirth": "1989-07-01",
       "gender": 0,
       "idCard": "344343432",
@@ -113,10 +108,9 @@
         "name": "Platinium"
       }
     },
-
     {
       "id": 2,
-      "name":"Nguyễn Thị Hào",
+      "name": "Nguyễn Thị Hào",
       "dateOfBirth": "1970-11-07",
       "gender": 0,
       "idCard": "643431213",
@@ -128,10 +122,9 @@
         "name": "Member"
       }
     },
-
     {
       "id": 3,
-      "name":"Dương Văn Quan",
+      "name": "Dương Văn Quan",
       "dateOfBirth": "1981-07-08",
       "gender": 1,
       "idCard": "543432111",
@@ -142,9 +135,63 @@
         "id": 1,
         "name": "Diamond"
       }
+    },
+    {
+      "id": 4,
+      "name": "SamSung s22 utra",
+      "dateOfBirth": "2023-02-18",
+      "gender": 0,
+      "idCard": "23523523452435",
+      "phoneNumber": "23523523523435",
+      "email": "sfdvsfv@gmail.com",
+      "address": "23 Nguyên Hoàng,Đà Nẵng",
+      "customerType": {
+        "id": 2,
+        "name": "Platinium"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Bùi Đăng Công ",
+      "dateOfBirth": "2004-08-15",
+      "gender": 1,
+      "idCard": "040204018130",
+      "phoneNumber": "0368842471",
+      "email": "buidangcong2k4@gmail.com",
+      "address": "yên thành, Nghệ An",
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      }
+    },
+    {
+      "id": 6,
+      "name": "SamSung s22 utra",
+      "dateOfBirth": "2023-02-26",
+      "gender": 0,
+      "idCard": "040204018130",
+      "phoneNumber": "23523523523435",
+      "email": "sfdvsfv@gmail.com",
+      "address": "K77/22 Thái Phiên, Quảng trị",
+      "customerType": {
+        "id": 2,
+        "name": "Platinium"
+      }
+    },
+    {
+      "id": 7,
+      "name": "cường ba ten đơ vlog",
+      "dateOfBirth": "2023-02-04",
+      "gender": 0,
+      "idCard": "23523523452435",
+      "phoneNumber": "23523523523435",
+      "email": "chucuongvlog@gmail.com",
+      "address": "K77/22 Thái Phiên, Quảng trị",
+      "customerType": {
+        "id": 2,
+        "name": "Platinium"
+      }
     }
-
-
   ],
   "customerType": [
     {
@@ -167,6 +214,5 @@
       "id": 5,
       "name": "Member"
     }
-
   ]
 }

@@ -1,50 +1,69 @@
 <h1 class="text-center">Trang thêm mới</h1>
-<div class="row col-12">
+<form  [formGroup]="customerForm" (ngSubmit)="add()">
+
+<div class="row col-12" style="margin-left: 20px">
   <div class="row col-6">
-    <div class="form-group distance">
-      <label for="id">Id</label>
-      <input type="text" class="form-control inputSize" id="id">
-    </div>
+
     <div class="form-group distance">
       <label for="name">Name</label>
-      <input type="text" class="form-control inputSize" id="name">
+      <input type="text" class="form-control inputSize" id="name" formControlName="name">
+      <p style="color: red" *ngIf="customerForm.controls.name.hasError('required') && customerForm.controls.name.touched">không đc để trống</p>
+      <p style="color: red" *ngIf="customerForm.controls.name.hasError('minlength') && customerForm.controls.name.touched">Tên khách hàng phải nhiều hơn 10 ký tự</p>
     </div>
     <div class="form-group distance">
       <label for="day-of-birth">Day of birth</label>
-      <input type="text" class="form-control inputSize" id="day-of-birth">
+      <input type="date" class="form-control inputSize" id="day-of-birth"  formControlName="dateOfBirth">
+      <p style="color: red" *ngIf="customerForm.controls.dateOfBirth.hasError('required') && customerForm.controls.dateOfBirth.touched">không đc để trống</p>
     </div>
-    <div class="form-group distance">
-      <label for="gender">Gender</label>
-      <input type="text" class="form-control inputSize" id="gender">
+    <label>gender :</label><br>
+    <div class="form-check"  >
+      <input class="form-check-input" type="radio" name="exampleRadios" formControlName="gender" id="exampleRadios1" value="1" checked>
+      <label class="form-check-label" for="exampleRadios1">
+        Nam
+      </label>
     </div>
+    <div class="form-check"  >
+      <input class="form-check-input" type="radio" name="exampleRadios" formControlName="gender" id="exampleRadios2" value="0" >
+      <label class="form-check-label" for="exampleRadios2">
+        Nữ
+      </label>
+    </div>
+    <br>
     <div class="form-group distance">
       <label for="id-card">Id card</label>
-      <input type="text" class="form-control inputSize" id="id-card">
+      <input type="text" class="form-control inputSize" id="id-card" formControlName="idCard">
+      <p style="color: red" *ngIf="customerForm.controls.idCard.hasError('required') && customerForm.controls.idCard.touched">không đc để trống</p>
+      <p style="color: red" *ngIf="customerForm.controls.idCard.hasError('minlength') && customerForm.controls.idCard.touched">phải có 12 chữ số</p>
     </div>
   </div>
   <div class="row col-6">
     <div class="form-group distance">
       <label for="phone-number">Phone number</label>
-      <input type="text" class="form-control inputSize" id="phone-number">
+      <input type="text" class="form-control inputSize" id="phone-number"  formControlName="phoneNumber">
+      <p style="color: red" *ngIf="customerForm.controls.phoneNumber.hasError('required') && customerForm.controls.phoneNumber.touched">không đc để trống</p>
+      <p style="color: red" *ngIf="customerForm.controls.phoneNumber.hasError('minlength') && customerForm.controls.phoneNumber.touched">phải có 10 chữ số</p>
     </div>
     <div class="form-group distance">
       <label for="email">email</label>
-      <input type="text" class="form-control inputSize" id="email">
+      <input type="text" class="form-control inputSize" id="email" formControlName="email" placeholder="abc@gmail.com">
+      <p style="color: red" *ngIf="customerForm.controls.email.hasError('required') && customerForm.controls.email.touched">không đc để trống</p>
+      <p style="color: red" *ngIf="customerForm.controls.email.hasError('minLength') && customerForm.controls.email.touched">Tên email phải nhiều hơn 10 ký tự</p>
+      <p style="color: red" *ngIf="customerForm.controls.email.hasError('pattern') && customerForm.controls.email.touched">chưa đúng định dạng</p>
     </div>
     <div class="form-group distance">
       <label for="address">address</label>
-      <input type="text" class="form-control inputSize" id="address">
+      <input type="text" class="form-control inputSize" id="address"  formControlName="address">
+      <p style="color: red" *ngIf="customerForm.controls.address.hasError('required') && customerForm.controls.address.touched">không đc để trống</p>
+      <p style="color: red" *ngIf="customerForm.controls.address.hasError('minLength') && customerForm.controls.address.touched">địa chỉ phải nhiều hơn 10 ký tự</p>
     </div>
     <div class="distance">
-      <select class="custom-select">
-        <option selected>Customer type id</option>
-        <option value="1">Diamond</option>
-        <option value="2">Platinium</option>
-        <option value="3">Gold</option>
-        <option value="4">Silver</option>
-        <option value="5">Member</option>
+      <label>loại khách hàng</label>
+      <select class="custom-select form-control"  formControlName="customerType">
+        <option *ngFor="let customerType of customerType" [ngValue]="customerType">{{customerType.name}}</option>
       </select>
     </div>
     <button type="submit" class="btn btn-primary">Add new</button>
   </div>
 </div>
+
+</form>

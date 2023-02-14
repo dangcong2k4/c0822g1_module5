@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {CustomerService} from "../../../service/customer.service";
+import {CustomerService} from "../../../service/customer/customer.service";
 import {Facility} from "../../../model/facility/facility";
 import {Customer} from "../../../model/customer/customer";
 
@@ -10,7 +10,7 @@ import {Customer} from "../../../model/customer/customer";
 })
 export class ListCustomerComponent implements OnInit {
   customer: Customer[] = [];
-
+  item: Customer = {};
   constructor(private customerService: CustomerService) {
     this.customerService.getAll().subscribe(next => {
       console.log(next);
@@ -25,4 +25,24 @@ export class ListCustomerComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+
+  delete(id: string) {
+    if (id != null) {
+      // console.log(this.item.id);
+      this.customerService.delete(this.item.id).subscribe(next => {
+        alert("xóa thành công")
+        this.getAll()
+      }, error => {
+      }, () => {
+      });
+    }
+  }
+
+  private getAll() {
+    this.customerService.getAll().subscribe(data => {
+      console.log(data)
+      this.customer = data;
+    })
+  }
 }
