@@ -1,0 +1,151 @@
+<h1 class="text-center">Danh sách sản phẩm</h1>
+
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">STT</th>
+    <th scope="col">Mã bệnh án</th>
+    <th scope="col">Mã Bệnh Nhân</th>
+    <th scope="col">Bệnh Nhân</th>
+    <th scope="col">Ngày nhập viện</th>
+    <th scope="col">Ngày ra viện</th>
+    <th scope="col">Lý do</th>
+    <th scope="col">Phuong pháp điều trị</th>
+    <th scope="col">Bác sĩ</th>
+    <th scope="col">Sửa</th>
+    <th scope="col">Xóa</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let benhan of benhAn, index as i">
+    <td>{{i+1}}</td>
+    <td>{{benhan.code}}</td>
+    <td>{{benhan.patientCode}}</td>
+    <td>{{benhan.patient}}</td>
+    <td>{{benhan.startDate}}</td>
+    <td>{{benhan.endDate}}</td>
+    <td>{{benhan.reason}}</td>
+    <td>{{benhan.cures}}</td>
+    <td>{{benhan.doctor}}</td>
+    <td><a class="btn btn-info" [routerLink]="['/edit',benhan.id]">sửa</a></td>
+    <td>
+      <button class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="item= benhan">Xóa</button>
+      <!--  modal-->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              bạn có muốn xóa sản phẩm này
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">no</button>
+              <button type="button"  class="btn btn-primary" data-bs-dismiss="modal" (click)="delete(benhan.id)">yes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </td>
+
+  </tr>
+
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

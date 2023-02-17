@@ -1,0 +1,54 @@
+{
+  "benhAn": [
+    {
+      "id": 1,
+      "idCard": "BA-133",
+      "benhNhan": {
+        "id": 4,
+        "idCard": "BN-438",
+        "name": "Nguyễn văn C"
+      },
+      "ngayNhapVien": "2022-09-09",
+      "ngayRaVien": "2022-09-09",
+      "lyDo": "ỉa chảy",
+      "phuongPhap": "uống thuốc",
+      "bacSi": "Công"
+    },
+    {
+      "id": 2,
+      "idCard": "BA-682",
+      "benhNhan": {
+        "id": 2,
+        "idCard": "BN-436",
+        "name": "Nguyễn văn A"
+      },
+      "ngayNhapVien": "2022-09-09",
+      "ngayRaVien": "2022-09-09",
+      "lyDo": "ỉa chảy abc",
+      "phuongPhap": "uống thuốc",
+      "bacSi": "Công"
+    }
+  ],
+  "benhNhan": [
+    {
+      "id": 1,
+      "idCard": "BN-435",
+      "name": "a Phúc"
+    },
+    {
+      "id": 2,
+      "idCard": "BN-436",
+      "name": "Nguyễn văn A"
+    },
+    {
+      "id": 3,
+      "idCard": "BN-437",
+      "name": "Đoàn Thị E"
+    },
+    {
+      "id": 4,
+      "idCard": "BN-438",
+      "name": "Nguyễn văn C"
+    }
+  ]
+}

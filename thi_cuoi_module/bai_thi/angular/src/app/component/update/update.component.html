@@ -1,0 +1,47 @@
+
+<h1 class="text-center">Trang chỉnh sửa</h1>
+<form class="text-center" [formGroup]="benhAnForm" (ngSubmit)="submit()">
+  <table style="margin-left: 35%">
+    <tr>
+      <td>Mã bệnh án</td>
+      <td>
+        <input disabled  class="form-control" formControlName="idCard">
+      </td>
+    </tr>
+    <tr>
+      <td>Ngày nhập Viện</td>
+      <td><input type="date"  class="form-control" formControlName="ngayNhapVien">
+        <p style="color: red" *ngIf="benhAnForm.controls.ngayNhapVien.hasError('required') && benhAnForm.controls.ngayNhapVien.touched">không đc để trống</p>
+      </td>
+    </tr>
+    <tr>
+      <td>Ngày ra viện</td>
+      <td><input type="date"  class="form-control" formControlName="ngayRaVien">
+        <p style="color: red" *ngIf="benhAnForm.controls.ngayRaVien.hasError('required') && benhAnForm.controls.ngayRaVien.touched">không đc để trống</p>
+      </td>
+    </tr>
+    <tr>
+      <td>Lý do</td>
+      <td><input type="text"  class="form-control" formControlName="lyDo">
+        <p style="color: red" *ngIf="benhAnForm.controls.lyDo.hasError('required') && benhAnForm.controls.lyDo.touched">không đc để trống</p>
+      </td>
+    </tr>
+    <tr>
+      <td>Phương pháp điều trị</td>
+      <td><input type="text"  class="form-control" formControlName="phuongPhap">
+        <p style="color: red" *ngIf="benhAnForm.controls.phuongPhap.hasError('required') && benhAnForm.controls.phuongPhap.touched">không đc để trống</p>
+      </td>
+    </tr>
+    <tr>
+      <td>Bác sĩ</td>
+      <td><input type="text"  class="form-control" formControlName="bacSi">
+        <p style="color: red" *ngIf="benhAnForm.controls.bacSi.hasError('required') && benhAnForm.controls.bacSi.touched">không đc để trống</p>
+        <p style="color: red" *ngIf="benhAnForm.controls.bacSi.hasError('minlength') && benhAnForm.controls.bacSi.touched">tên phải nhiều hơn 5 ký tự</p>
+      </td>
+    </tr>
+  </table>
+  <button class="btn bg-primary" style="margin-left: 100px; color: white">chỉnh sửa</button>
+</form>
+
+
+
