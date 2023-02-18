@@ -24,4 +24,14 @@ public class MedicalRecordService implements IMedicalRecordService {
     public void delete(int id) {
         medicalRecordRepository.deleteId(id);
     }
+
+    @Override
+    public void save(MedicalRecord medicalRecord) {
+        medicalRecordRepository.saveMedical(medicalRecord);
+    }
+
+    @Override
+    public void update(MedicalRecord medicalRecord) {
+        medicalRecordRepository.update(medicalRecord);
+    }
 }

@@ -29,4 +29,18 @@ public class MedicalRecordController {
         medicalRecordService.delete(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @PostMapping("/add")
+    public ResponseEntity<List<MedicalRecord>> add(@PathVariable("medicalRecord") Model model, MedicalRecord medicalRecord){
+        medicalRecordService.save(medicalRecord);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @PatchMapping ("/edit")
+    public ResponseEntity<List<MedicalRecord>> update(@PathVariable("medicalRecord") Model model, MedicalRecord medicalRecord){
+        medicalRecordService.update(medicalRecord);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+
 }

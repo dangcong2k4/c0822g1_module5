@@ -22,4 +22,19 @@ public interface IMedicalRecordRepository extends JpaRepository<MedicalRecord, I
     @Transactional
     @Query(value = "delete from medical_record s where s.id = :id", nativeQuery = true)
     void deleteId(@Param("id") int id);
+
+
+
+    @Modifying
+    @Transactional
+    @Query(value = "insert into medical_record(code,patient_code,patient,start_date,end_date,reason,cures,doctor) values(?,?,?,?,?,?,?,?);", nativeQuery = true)
+    void saveMedical(@Param("medicalRecord") MedicalRecord medicalRecord);
+
+    @Modifying
+    @Transactional
+    @Query(value = "update customer set code = ?,patient_code= ?, patient =?, start_date =?,end_date =?, reason =?,cures =?, doctor =? where id = ?;", nativeQuery = true)
+    void update(@Param("medicalRecord") MedicalRecord medicalRecord);
+
+
+
 }

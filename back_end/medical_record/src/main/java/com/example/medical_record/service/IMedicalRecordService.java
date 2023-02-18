@@ -9,4 +9,8 @@ public interface IMedicalRecordService {
     List<MedicalRecord> findAll();
 
     void delete(int id);
+
+    void save(MedicalRecord medicalRecord);
+
+    void update(MedicalRecord medicalRecord);
 }
