@@ -25,4 +25,8 @@ export class BenhAnService {
   edit( benhAn: any) {
     return this.httpClient.put("http://localhost:3000/benhAn/"+benhAn.id , benhAn);
   }
+
+  save(benhAn: any) {
+    return this.httpClient.post("http://localhost:8080/add", benhAn);
+  }
 }

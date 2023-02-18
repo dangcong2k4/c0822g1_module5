@@ -9,7 +9,7 @@ import {UpdateComponent} from "./component/update/update.component";
 const routes: Routes = [
   {path:'',component:ListComponent},
   {path:'list',component:ListComponent},
-  {path:'create',component:CreateComponent},
+  {path:'add',component:CreateComponent},
   {path:'edit/:id',component:UpdateComponent},
 ];
 
