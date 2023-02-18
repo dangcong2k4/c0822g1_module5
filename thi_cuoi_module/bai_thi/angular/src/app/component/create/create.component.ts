@@ -16,7 +16,7 @@ export class CreateComponent implements OnInit {
   ngOnInit(): void {
   }
   submit() {
-    
+
       this.benhAnService.save(this.medicalForm.value).subscribe( next => {
         alert("Thêm mới thành công")
         this.router.navigateByUrl("")

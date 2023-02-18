@@ -19,11 +19,11 @@ export class BenhAnService {
   }
 
   findById(id: number) {
-    return this.httpClient.get("http://localhost:3000/benhAn/"+ id);
+    return this.httpClient.get("http://localhost:8080/"+ id);
   }
 
   edit( benhAn: any) {
-    return this.httpClient.put("http://localhost:3000/benhAn/"+benhAn.id , benhAn);
+    return this.httpClient.put("http://localhost:8080/edit/"+benhAn.id , benhAn);
   }
 
   save(benhAn: any) {
